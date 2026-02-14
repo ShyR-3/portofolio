@@ -421,11 +421,12 @@ section {
 }
 
 /* ===== SKILLS SECTION ===== */
+/* ===== SKILLS SECTION ===== */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -448,36 +449,84 @@ section {
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 2px solid rgba(99, 102, 241, 0.1);
-}
-
-.skill-list {
-    list-style: none;
-}
-
-.skill-item {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.skill-item:last-child {
-    border-bottom: none;
+.skill-category h3::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
 }
 
-.skill-item::before {
-    content: '✓';
-    color: var(--secondary-color);
-    font-weight: bold;
-    font-size: 1.1rem;
+.skill-item {
+    margin-bottom: 20px;
 }
 
-.skill-item span {
-    color: var(--gray-color);
+.skill-label {
+    display: block;
+    margin-bottom: 8px;
     font-weight: 500;
+    color: var(--dark-color);
 }
 
+.skill-bar {
+    height: 10px;
+    background-color: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.skill-percentage {
+    text-align: right;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+    .skill-category {
+        padding: 20px;
+    }
+    
+    .skill-label {
+        font-size: 0.95rem;
+    }
+    
+    .skill-bar {
+        height: 8px;
+    }
+    
+    .skill-percentage {
+        font-size: 0.85rem;
+    }
+}
 /* ===== FOOTER ===== */
 footer {
     background: linear-gradient(135deg, var(--dark-color), #0f172a);
