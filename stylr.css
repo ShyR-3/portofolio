@@ -420,7 +420,7 @@ section {
     line-height: 1.7;
 }
 
-/* ===== SKILLS SECTION ===== */
+
 /* ===== SKILLS SECTION ===== */
 .skills-container {
     display: grid;
@@ -607,6 +607,107 @@ footer {
 
 .gallery-item:hover::before {
     opacity: 1;
+}
+
+/* ===== PROJECTS SECTION ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.project-category {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-desc {
+    color: var(--gray-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.project-status.in-progress {
+    color: var(--primary-color);
+}
+
+.project-status.completed {
+    color: var(--secondary-color);
+}
+
+.project-status::before {
+    content: '⏳';
+    font-size: 1.2rem;
+}
+
+.project-status.completed::before {
+    content: '✅';
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(3px);
+}
+
+.project-link::after {
+    content: '↗';
+    font-size: 1rem;
 }
 
 /* ===== RESPONSIVE DESIGN - MOBILE FIRST ===== */
